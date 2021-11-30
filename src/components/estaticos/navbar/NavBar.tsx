@@ -1,49 +1,110 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+import { createStyles, alpha, Theme, makeStyles } from '@material-ui/core/styles';
+import SearchIcon from '@material-ui/icons/Search';
 
-function NavBar() {
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+
+    title: {
+      flexGrow: 1,
+      display: 'none',
+      [theme.breakpoints.up('sm')]: {
+        display: 'block',
+      },
+    },
+    menu: {
+      flexGrow: 1,
+      display: 'none',
+      [theme.breakpoints.up('sm')]: {
+        display: 'block',
+      },
+    },
+    search: {
+      position: 'relative',
+      borderRadius: theme.shape.borderRadius,
+      backgroundColor: alpha(theme.palette.common.white, 0.15),
+      '&:hover': {
+        backgroundColor: alpha(theme.palette.common.white, 0.25),
+      },
+      marginLeft: 0,
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(1),
+        width: 'auto',
+      },
+    },
+    searchIcon: {
+      padding: theme.spacing(0, 2),
+      height: '100%',
+      position: 'absolute',
+      pointerEvents: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    inputRoot: {
+      color: 'inherit',
+    },
+    inputInput: {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '12ch',
+        '&:focus': {
+          width: '20ch',
+        },
+      },
+    },
+  }),
+);
+
+export default function SearchAppBar() {
+  const classes = useStyles();
+
   return (
-    <>
-      <AppBar position="static">
-        <Toolbar variant="dense">
-          <Box style={{ cursor: "pointer" }} >
-            <Typography variant="h5" color="inherit">
-              BlogPessoal
-            </Typography>
-          </Box>
-
-          <Box display="flex" justifyContent="start">
-            <Box mx={1} style={{ cursor: "pointer" }}>
-              <Typography variant="h6" color="inherit">
-                home
-              </Typography>
-            </Box>
-            <Box mx={1} style={{ cursor: "pointer" }}>
-              <Typography variant="h6" color="inherit">
-                postagens
-              </Typography>
-            </Box>
-            <Box mx={1} style={{ cursor: "pointer" }}>
-              <Typography variant="h6" color="inherit">
-                temas
-              </Typography>
-            </Box>
-            <Box mx={1} style={{ cursor: "pointer" }}>
-              <Typography variant="h6" color="inherit">
-                cadastrar tema
-              </Typography>
-            </Box>
-            <Box mx={1} style={{ cursor: "pointer" }}>
-              <Typography variant="h6" color="inherit">
-                logout
-              </Typography>
-            </Box>
-          </Box>
-
+    <div className={classes.root}>
+      <AppBar position="static" style={{ background: "#DF8686" }}>
+        <Toolbar>
+          <Typography className={classes.title} variant="h5" noWrap>
+            <img src="https://i.imgur.com/H38WFKz.png" alt="" width="" height="80px" />
+          </Typography>
+          <Typography className={classes.menu}>
+            Receitas
+          </Typography>
+          <Typography className={classes.menu}>
+            Temas
+          </Typography>
+          <Typography className={classes.menu}>
+            Cadastrar receitas
+          </Typography>
+          <Typography className={classes.menu}>
+            Logout
+          </Typography>
+          <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
         </Toolbar>
       </AppBar>
-    </>
-  )
+    </div>
+  );
 }
-
-export default NavBar;
