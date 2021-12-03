@@ -9,30 +9,30 @@ import Login from './paginas/login/Login';
 
 function App() {
   return (
-      <Router>
-        <NavBar/>
-          <Switch>
-            <div style={{minHeight: '100vh'}}>
+    <Router>
+      <NavBar />
+      <Switch>
+        <div style={{ minHeight: '100vh' }}>
 
-            <Route exact path="/">
-                <Login />
-              </Route>
+          <Route exact path="/">
+            <Login />
+          </Route>
 
-              <Route path="/login">
-                <Login />
-              </Route>
+          <Route path="/login">
+            <Login />
+          </Route>
 
-              <Route path="/home">
-                <Home />
-              </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
 
-              <Route path="/cadastrousuario">
-                <CadastroUsuario />
-              </Route>
-            </div>
-          </Switch>
-        <Footer/>
-      </Router>  
+          <Route path="/cadastrousuario">
+            <CadastroUsuario />
+          </Route>
+        </div>
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 

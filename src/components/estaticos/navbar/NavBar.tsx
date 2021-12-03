@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 function NavBar() {
@@ -15,11 +15,13 @@ function NavBar() {
           </Box>
 
           <Box display="flex" justifyContent="start">
-            <Box mx={1} className='cursor'>
-              <Typography variant="h6" color="inherit">
-                home
-              </Typography>
-            </Box>
+            <Link to='/home' className='text-decorator-none'>
+              <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                  home
+                </Typography>
+              </Box>
+            </Link>
             <Box mx={1} className='cursor'>
               <Typography variant="h6" color="inherit">
                 postagens
@@ -36,11 +38,11 @@ function NavBar() {
               </Typography>
             </Box>
             <Link to='/login' className='text-decorator-none'>
-            <Box mx={1}  className='cursor'>
-              <Typography variant="h6" color="inherit">
-                logout
-              </Typography>
-            </Box>
+              <Box mx={1} className='cursor'>
+                <Typography variant="h6" color="inherit">
+                  logout
+                </Typography>
+              </Box>
             </Link>
           </Box>
 
