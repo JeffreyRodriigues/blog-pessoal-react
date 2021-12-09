@@ -1,38 +1,45 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Typography, Box, Grid, Button } from '@material-ui/core';
+import TabPostagem from '../../components/postagens/tabpostagem/TabPostagem';
+import ModalPostagem from '../../components/postagens/modalPostagem/ModalPostagem';
 import './Home.css';
-import CarouselComponent from '../../components/carousel/CarouselComponent';
+import { useHistory } from 'react-router';
+import useLocalStorage from 'react-use-localstorage';
 
 function Home() {
+  let history = useHistory();
+  const [token, setToken] = useLocalStorage('token');
+
+  useEffect(() => {
+    if (token == "") {
+      alert("Você precisa estar logado")
+      history.push("/login")
+
+    }
+  }, [token])
+
   return (
     <>
-
-      <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "white" }}>
+      <Grid container direction="row" justifyContent="center" alignItems="center" className='caixa'>
         <Grid alignItems="center" item xs={6}>
           <Box paddingX={20} >
-            <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "#C53F3F", fontWeight: "bold" }}>Seja bem vindo ao Rango!</Typography>
-            <Typography variant="h5" gutterBottom color="textPrimary" component="h6" align="center" style={{ color: "black", fontWeight: "regular" }}>A galera gosta de compartilhar receitas. Você vai ficar de fora?</Typography>
+            <Typography variant="h4" gutterBottom color="textPrimary" component="h3" align="center" className='titulo'>Seja bem vindo ao RANGO!</Typography>
+            <Typography variant="h6" gutterBottom color="textPrimary" component="h5" align="center" className='titulo'>Compartilhando sua receita, tudo fica mais gostoso</Typography>
           </Box>
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}>
+              <ModalPostagem />
             </Box>
-            <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#C53F3F", color: "white" }}>Ver Receitas</Button>
+            <Button variant="outlined" className='botao'>Ver Receitas</Button>
           </Box>
         </Grid>
         <Grid item xs={6} >
           <img src="https://i.imgur.com/IxflXkb.png" alt="" width="500px" height="500px" />
         </Grid>
-        <Grid xs={12} style={{ backgroundColor: "white" }}>
+        <Grid xs={12} className='postagens'>
+          <TabPostagem />
         </Grid>
       </Grid>
-      <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#EFDBDB" }}>
-        <Grid xs={12} className='banner'>
-          <Box marginTop={1} padding={1} >
-            <CarouselComponent />
-          </Box>
-        </Grid>
-      </Grid>
-
     </>
   );
 }

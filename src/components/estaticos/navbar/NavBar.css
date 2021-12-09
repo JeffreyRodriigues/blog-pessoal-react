@@ -1,8 +1,18 @@
 .cursor {
   cursor: pointer;
   color: white;
+  margin-right: 500px;
 }
 
 .text-decorator-none {
   text-decoration: none;
+}
+
+.text {
+  font-family: Segoe UI !important;
+}
+
+.navbar {
+  justify-content: space-around;
+  background-color: #df8686;
 }

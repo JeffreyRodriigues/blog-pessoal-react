@@ -1,11 +1,19 @@
-.titulo {
-  color: brown;
-  text-align: center;
+.caixa {
+  background-color: #d04343;
 }
 
-.img {
-  height: 500px;
-  width: 500px;
-  display: block;
-  margin: 0 auto;
+.titulo {
+  color: white !important;
+  font-weight: bold !important;
+  font-family: Segoe UI !important;
+}
+
+.botao {
+  border-color: white !important;
+  color: white !important;
+  font-family: Segoe UI !important;
+}
+
+.postagens {
+  background-color: white;
 }
