@@ -1,15 +1,17 @@
 .caixa {
-  background-color: rgb(250, 154, 98);
+  background-color: #d04343;
 }
 
 .titulo {
   color: white !important;
   font-weight: bold !important;
+  font-family: Segoe UI !important;
 }
 
 .botao {
   border-color: white !important;
   color: white !important;
+  font-family: Segoe UI !important;
 }
 
 .postagens {

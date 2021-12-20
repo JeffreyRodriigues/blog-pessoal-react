@@ -20,43 +20,43 @@ function NavBar() {
       <AppBar position="static">
         <Toolbar variant="dense" className="navbar">
           <Box className='cursor'>
-            <Typography variant="h5" color="inherit">
-              BlogPessoal
+            <Typography variant="h5" color="inherit" className='text'>
+              O RANGO!
             </Typography>
           </Box>
 
           <Box display="flex" justifyContent="start">
             <Link to='/home' className='text-decorator-none'>
               <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  home
+                <Typography variant="h6" color="inherit" className='text'>
+                  Home
                 </Typography>
               </Box>
             </Link>
             <Link to='/posts' className='text-decorator-none'>
               <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  postagens
+                <Typography variant="h6" color="inherit" className='text'>
+                  Postagens
                 </Typography>
               </Box>
             </Link>
             <Link to='/temas' className='text-decorator-none'>
               <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  temas
+                <Typography variant="h6" color="inherit" className='text'>
+                  Temas
                 </Typography>
               </Box>
             </Link>
             <Link to='/formularioTema' className='text-decorator-none'>
               <Box mx={1} className='cursor'>
-                <Typography variant="h6" color="inherit">
-                  cadastrar tema
+                <Typography variant="h6" color="inherit" className='text'>
+                  Cadastrar tema
                 </Typography>
               </Box>
             </Link>
             <Box mx={1} className='cursor' onClick={goLogout}>
-              <Typography variant="h6" color="inherit">
-                login
+              <Typography variant="h6" color="inherit" className='text'>
+                Login
               </Typography>
             </Box>
           </Box>

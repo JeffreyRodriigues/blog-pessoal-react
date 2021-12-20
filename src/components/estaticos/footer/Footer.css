@@ -1,18 +1,19 @@
 .box1 {
-  background-color: rgb(250, 154, 98);
-  height: 120px;
+  background-color: #df8686;
+  height: 100px;
 }
 
 .box2 {
-  background-color: black;
+  background-color: brown;
   height: 60px;
 }
 
 .redes {
-  font-size: 60px !important;
+  font-size: 35px !important;
   color: white;
 }
 
 .textos {
   color: white;
+  font-family: Segoe UI !important;
 }

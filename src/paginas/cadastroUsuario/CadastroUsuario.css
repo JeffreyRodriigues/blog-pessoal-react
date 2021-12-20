@@ -1,10 +1,11 @@
 .imagem2 {
-  background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
+  background-image: url(https://i.imgur.com/L7f3UNV.png);
   background-repeat: no-repeat;
-  width: 100vh;
-  min-height: 100vh;
+  width: 80vh;
+  min-height: 80vh;
   background-size: cover;
   background-position: center;
+  margin-top: 10px !important;
 }
 
 .textos2 {
@@ -13,4 +14,9 @@
 
 .btnCancelar {
   margin-right: 20px !important;
+  margin-bottom: 10px !important;
+}
+
+.btnCadastrar {
+  margin-bottom: 10px !important;
 }
